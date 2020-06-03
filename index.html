@@ -4,42 +4,12 @@
   </head>
   <body>
     <a-scene vr-mode-ui="enabled: false">
-      <a-box
-        src="https://i.imgur.com/mYmmbrp.jpg"
-        position="0 3 -3"
-        rotation="0 45 45"
-      ></a-box>
-      <a-sky
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Zapporthorn_Spherical_Panorama.jpg/1280px-Zapporthorn_Spherical_Panorama.jpg"
-      >
-      </a-sky>
-      <a-box
-        position="-1 0.5 -3"
-        rotation="0 45 0"
-        color="#4CC3D9"
-        shadow
-      ></a-box>
-      <a-sphere
-        position="0 1.25 -5"
-        radius="1.25"
-        color="#EF2D5E"
-        shadow
-      ></a-sphere>
       <a-cylinder
-        position="1 0.75 -3"
-        radius="0.5"
-        height="1.5"
-        color="#FFC65D"
-        shadow
+        color="orange"
+        radius="0.1"
+        position="0 2 -2"
+        animation="property: position; dir: alternate; dur: 2000; loop: true; from: 0 2 -5; to: 0 3 -5;"
       ></a-cylinder>
-      <a-plane
-        src="https://cdn.aframe.io/a-painter/images/floor.jpg"
-        rotation="-90 0 0"
-        width="30"
-        height="30"
-      ></a-plane>
-      <a-light type="ambient" color="red"></a-light>
-      <a-light type="point" intensity="2" position="0 0 -1"></a-light>
     </a-scene>
   </body>
 </html>
