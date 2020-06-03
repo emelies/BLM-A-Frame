@@ -1,24 +1,20 @@
 <html>
   <head>
     <script src="https://unpkg.com/aframe@latest"></script>
+    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+<script src="https://unpkg.com/three@latest/examples/js/libs/inflate.min.js"></script>
   </head>
   <body>
     <a-scene vr-mode-ui="enabled: false">
-      
-      <a-sky
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Zapporthorn_Spherical_Panorama.jpg/1280px-Zapporthorn_Spherical_Panorama.jpg"
-      >
-      </a-sky>
-      
-      <a-sphere
-        position="0 1.25 -5"
-        radius="1.25"
-        color="#EF2D5E"
-        shadow
-      ></a-sphere>
-     
-      <a-light type="ambient" color="red"></a-light>
-      <a-light type="point" intensity="2" position="0 0 -1"></a-light>
+     <a-videosphere src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"></a-videosphere>
+
+      <a-entity
+        animation-mixer="clip: *;"
+        scale="0.005 0.005 0.005"
+        position="0 1.5 -2"
+        fbx-model="src: url(https://cdn.glitch.com/da7b81ae-476b-44b0-97e2-e9473f0ecebf%2FMale%20Sitting%20Pose.fbx?v=1591193048169);"
+      ></a-entity>
+
     </a-scene>
   </body>
 </html>
