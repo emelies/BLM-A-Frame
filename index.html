@@ -4,7 +4,7 @@
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
     <script src="https://unpkg.com/three@latest/examples/js/libs/inflate.min.js"></script>
     <script src="aframe-components.js"></script>
-    <script src="aframe-playvideo.js"></script>
+    <script src="script.js"></script>
   </head>
   <body>
     <a-scene cursor="rayOrigin: mouse" vr-mode-ui="enabled: false">
@@ -64,25 +64,9 @@
 
       -->
 
-      <a-box
-        position="0.277 2.318 -4"
-        radius="0"
-        color="none"
-        shadow
-        xsrc="#vid1"
-        loop
-        preload
-      >
-      </a-box>
+      <a-box position="0.277 2.318 -4" src="#vid1" shadow></a-box>
 
-      <a-box
-        position="0.277 2.318 -4"
-        radius="0"
-        color="none"
-        shadow
-        xsrc="#vid2"
-      >
-      </a-box>
+      <a-box position="0.277 2.318 -4" src="#vid2" shadow></a-box>
 
       <!-- 
 
