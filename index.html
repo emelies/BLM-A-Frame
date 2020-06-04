@@ -6,7 +6,6 @@
   </head>
   <body>
     <a-scene vr-mode-ui="enabled: false">
-      
       <a-assets>
         <video
           id="vid1"
@@ -30,9 +29,8 @@
         position="0 0.5 -6"
         fbx-model="src: url(https://cdn.glitch.com/da7b81ae-476b-44b0-97e2-e9473f0ecebf%2FMale%20Sitting%20Pose.fbx?v=1591193048169);"
       ></a-entity>
-      
-      <a-plane width="100" height="100" rotation="-90 0 0">
-      </a-plane>
+
+      <a-plane width="100" height="100" rotation="-90 0 0"> </a-plane>
 
       <a-box
         position="0.277 2.318 -4"
@@ -64,18 +62,24 @@
       >
       </a-box>
     </a-scene>
-    
+
     <script>
-    
-      const models = document.querySelector("")
-      
-    const object = this.el.getObject3D('mesh');
-const material = this.material;
-if (object) {
-  object.traverse(function (node) {
-    if (node.isMesh) node.material = material;
-  });
-}
+      const models = document.querySelectorAll("[fbx-model]");
+
+      models.forEach(model => {
+        //const object = model.getObject3D("mesh");
+        
+          console.log(model.object3D);
+        let object = model.detail.model;
+        
+        object.traverse(function(node) {
+          if (node.isMesh) {
+            //node.material.color = new THREE.Color("0x00ff00");
+            node.material = material;
+            node.material.needsUpdate = true;
+          }
+        });
+      });
     </script>
   </body>
 </html>
