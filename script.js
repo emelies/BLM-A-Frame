@@ -1,13 +1,12 @@
 window.onload = init;
 
 function init() {
-  
   // get all <video>
   let videos = document.querySelectorAll("video");
-  
+
   // get all <a-box>
   let boxes = document.querySelectorAll("a-box");
-  
+
   // loop through all the boxes
   boxes.forEach(box => {
     
@@ -16,25 +15,36 @@ function init() {
       
       // get the id
       let id = box.getAttribute("src");
-  
-      // pause all videos
-      videos.forEach(video => {
-        video.pause();
-      })
       
-      // get the correct video and play it!
+      // get the clicked video
       let video = document.querySelector(id);
-      video.play();
+
+      // pause all videos
+      videos.forEach(vid => {
+        
+        // if the video is not the clicked video, pause it!
+        if (vid !== video) {
+          vid.pause();
+        }
+      });
+
+      // get the correct video and play it!
+      if (video.paused){
+        video.muted = false;
+        video.play();
+      } else {
+        video.pause();
+      }
     };
   });
-}
 
-document.querySelectorAll("video").forEach(video => {
-  video.setAttribute("preload", true);
-  video.setAttribute("autoplay", true);
-  video.playsinline = true;
-  video.muted = false;
-  video.setAttribute("crossorigin", "anonymous");
-  video.play();
-  video.pause();
-});
+  document.querySelectorAll("video").forEach(video => {
+    video.setAttribute("preload", true);
+    video.setAttribute("autoplay", true);
+    video.playsinline = true;
+    video.muted = true;
+    video.setAttribute("crossorigin", "anonymous");
+    video.play();
+    video.pause();
+  });
+}
