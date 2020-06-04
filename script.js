@@ -1,11 +1,30 @@
 window.onload = init;
 
 function init() {
-  document.querySelectorAll("a-box").forEach(box => {
+  
+  // get all <video>
+  let videos = document.querySelectorAll("video");
+  
+  // get all <a-box>
+  let boxes = document.querySelectorAll("a-box");
+  
+  // loop through all the boxes
+  boxes.forEach(box => {
+    
+    // if a box is clicked
     box.onclick = function() {
+      
+      // get the id
       let id = box.getAttribute("src");
+  
+      // pause all videos
+      videos.forEach(video => {
+        video.pause();
+      })
+      
+      // get the correct video and play it!
       let video = document.querySelector(id);
-      let src = video.src;
+      video.play();
     };
   });
 }
